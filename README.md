@@ -3,11 +3,11 @@ A terminal torrent file downloader for nyaa.si (not a torrent client).
 
 Dependencies
 -----
--wget
+wget
 
 How to use
 -----
-Simply run main.py and follow the instructions.
+clone the repo, run main.py and follow the instructions.
 The downloads are stored here: ~/Downloads/nyaatorrents/
 
 Screenshot
