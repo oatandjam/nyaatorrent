@@ -7,7 +7,7 @@ wget
 
 How to use
 -----
-clone the repo, run main.py and follow the instructions.
+Clone the repo, run main.py and follow the instructions.
 The downloads are stored here: ~/Downloads/nyaatorrents/
 
 Screenshot
