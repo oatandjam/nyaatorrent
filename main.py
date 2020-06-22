@@ -1,52 +1,38 @@
-import feedparser as fp
-from colorama import init
-init()
-from colorama import Fore, Back, Style
-import subprocess
-import os
-from vars import loc
-import sys
-
-ans = input("would you like install the packages colorama and feedparser (y/n)? ")
-
-if (ans == "y"):
+import subprocess, os, sys
+try:
+    from colorama import Fore, Back, Style, init
+except ImportError:
+    print("Installing Colorama...")
     subprocess.call("pip install colorama")
+try:
+    import feedparser as fp
+except ImportError:
+    print("Installing Feedparser")
     subprocess.call("pip install feedparser")
 
-elif (ans == "n"):
-    print("Understandable")
-    exit()
-
+#DOWNLOAD PATH
+location = ("~/Downloads/nyaatorrents/")
 
 d = fp.parse('https://nyaa.si/?page=rss')
 
-print(d['feed']['title'])
-print(d.feed.subtitle)
 print(d['feed']['link'])
 
-print(Fore.RED + 'test!')
 x = (len(d['entries']))
 
-print(d['entries'][0]['title'])
-
-i=0
 for i in range(x):
     print(Fore.GREEN +str(i) +(" ") +Style.RESET_ALL +((d['entries'][i]['title'] +"      " +Fore.GREEN + (d['entries'][i]['link']) +Style.RESET_ALL)))
-    
-    i=i+1
-
-i=0
-print("                                                             ")
-
-t = int(input("Enter the the number of the torrent you want to download: "))
+print("\n")
+t = str(input("Enter the the number of the torrent(s) you want to download (example: 1,2,3): "))
 
 print(t)
+trn = t.split(',')
+trnlth = len(trn)
 
-print((d['entries'][t]['link']))
-
-rent = (d['entries'][t]['link'])
-
-cmd = ("wget " +rent +" -P " +loc)
-subprocess.call(cmd)
-
-#exit=input("Press Any Key To Exit...")
+for i in range(trnlth):
+    print((d['entries'][int(trn[i])]['link']))
+for i in range(trnlth):
+    rent = (d['entries'][int(trn[i])]['link'])
+    cmd = ("wget " +rent +" -P " +location)
+    subprocess.call(cmd)
+print("Download(s) complete!")
+exit=input("Press Any Key To Exit...")
