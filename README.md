@@ -7,4 +7,4 @@ just run main.py and follow the instructions.
 
 Screenshot
 ----------
-![](https://raw.githubusercontent.com/Pixelhacker9000/nyaatorrent/master/nyaatorrentpv.png?token=AECICXZDLOYYALNL2TFOXXC5E4UR6)
+![](https://github.com/oatandjam/nyaatorrent/blob/master/nyaatorrentpv.png)
