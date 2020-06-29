@@ -1,4 +1,5 @@
-# nyaatorrent
+![](https://github.com/oatandjam/nyaatorrent/blob/master/logo.png)
+
 A terminal torrent file downloader for nyaa.si (not a torrent client).
 
 Dependencies
