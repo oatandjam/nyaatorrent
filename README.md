@@ -8,8 +8,11 @@ wget
 
 How to use
 -----
-Clone the repo, run main.py and follow the instructions.
-The downloads are stored here: ~/Downloads/nyaatorrents/
+Clone the repo, run main.py.
+
+The downloads are stored in the following directory: ~/Downloads/nyaatorrents/
+
+The download path can be changed by changing the location variable in main.py under: #DOWNLOAD PATH
 
 Screenshot
 -----
