@@ -17,3 +17,9 @@ The download path can be changed by changing the location variable in main.py un
 Screenshot
 -----
 ![](https://github.com/oatandjam/nyaatorrent/blob/master/nyaatorrentpv.png)
+
+TO DO
+-----
+* Add search functionality
+* Add the ability to open downloaded torrent files in your default torrent client.
+* Revamp UI!
