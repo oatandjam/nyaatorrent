@@ -20,6 +20,6 @@ Screenshot
 
 TO DO
 -----
-* Add search functionality
+* Add search functionality.
 * Add the ability to open downloaded torrent files in your default torrent client.
 * Revamp UI!
