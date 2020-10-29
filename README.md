@@ -4,7 +4,9 @@ A terminal torrent file downloader for nyaa.si (not a torrent client).
 
 Dependencies
 -----
+python3
 wget
+
 
 How to use
 -----
