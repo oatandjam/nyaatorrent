@@ -3,13 +3,14 @@ try:
     from colorama import Fore, Back, Style, init
 except ImportError:
     print("Installing Colorama...")
-    subprocess.call("pip install colorama")
+    subprocess.call("(python3 -m pip install colorama)", shell=True)
+    from colorama import Fore, Back, Style, init
 try:
     import feedparser as fp
 except ImportError:
     print("Installing Feedparser")
-    subprocess.call("pip install feedparser")
-
+    subprocess.call("(python3 -m pip install feedparser)", shell=True)
+    import feedparser as fp
 #DOWNLOAD PATH
 location = ("~/Downloads/nyaatorrents/")
 
@@ -33,6 +34,6 @@ for i in range(trnlth):
 for i in range(trnlth):
     rent = (d['entries'][int(trn[i])]['link'])
     cmd = ("wget " +rent +" -P " +location)
-    subprocess.call(cmd)
+    subprocess.call((cmd), shell=True)
 print("Download(s) complete!")
 exit=input("Press Any Key To Exit...")
