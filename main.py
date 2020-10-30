@@ -9,7 +9,7 @@ try:
     import feedparser as fp
 except ImportError:
     print("Installing Feedparser")
-    subprocess.call("(python3 -m pip install feedparser)", shell=True)
+    subprocess.call("(python3 -m pip install feedparser==6.0.0)", shell=True)
     import feedparser as fp
 #DOWNLOAD PATH
 location = ("~/Downloads/nyaatorrents/")
