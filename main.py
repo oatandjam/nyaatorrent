@@ -3,14 +3,18 @@ try:
     from colorama import Fore, Back, Style, init
 except ImportError:
     print("Installing Colorama...")
-    subprocess.call("(python3 -m pip install colorama)", shell=True)
+    subprocess.call("(python3 -m pip install colorama==0.4.1)", shell=True)
+finally:
     from colorama import Fore, Back, Style, init
+    
 try:
     import feedparser as fp
 except ImportError:
     print("Installing Feedparser")
     subprocess.call("(python3 -m pip install feedparser==6.0.0)", shell=True)
+finally:
     import feedparser as fp
+
 #DOWNLOAD PATH
 location = ("~/Downloads/nyaatorrents/")
 
