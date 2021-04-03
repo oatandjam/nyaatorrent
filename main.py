@@ -31,8 +31,8 @@ torrent_dl = Prompt.ask("Enter the the number of the torrent(s) you would like t
 torrent_dl = torrent_dl.split(",")
 def torrent_download(*args):
     i=0
-    for item in arg:
-        print("Downloading " +str(arg))
+    for item in args:
+        print("Downloading " +str(args))
         print(entries[int(item[i])]['link'])
         print(i)
         i = i + 1
