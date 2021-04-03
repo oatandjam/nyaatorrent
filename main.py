@@ -1,43 +1,46 @@
-import subprocess, os, sys
 try:
-    from colorama import Fore, Back, Style, init
-except ImportError:
-    print("Installing Colorama...")
-    subprocess.call("(python3 -m pip install colorama==0.4.1)", shell=True)
-finally:
-    from colorama import Fore, Back, Style, init
-    
-try:
+    from rich.console import Console
+    from rich.text import Text
+    from rich.prompt import Prompt
+    from rich.table import Table
     import feedparser as fp
+    import os
+    import subprocess
 except ImportError:
-    print("Installing Feedparser")
-    subprocess.call("(python3 -m pip install feedparser==6.0.0)", shell=True)
-finally:
-    import feedparser as fp
-
+    print("Please make sure that all missing dependancies are installed!")
+    quit() 
 #DOWNLOAD PATH
-location = ("~/Downloads/nyaatorrents/")
+location = ("/downloads/nyaatorrents/")
+nyaa_rss = fp.parse('https://nyaa.si/?page=rss')
+print(nyaa_rss['feed']['link'])
+entries = nyaa_rss['entries']
 
-d = fp.parse('https://nyaa.si/?page=rss')
+console = Console()
 
-print(d['feed']['link'])
+def torrent_table():
+    table = Table(title="Nyaa.si Torrents")
+    table.add_column(style="green")
+    table.add_column("Name")
+    table.add_column("Link", style="blue")
+    for entry in entries:
+        table.add_row(str(entries.index(entry)),entry['title'],entry['link'])
+    console.print(table)
+torrent_table()
 
-x = (len(d['entries']))
+torrent_dl = Prompt.ask("Enter the the number of the torrent(s) you would like to download seperated by a comma")
+torrent_dl = torrent_dl.split(",")
+def torrent_download(*args):
+    i=0
+    for item in arg:
+        print("Downloading " +str(arg))
+        print(entries[int(item[i])]['link'])
+        print(i)
+        i = i + 1
+        #cmd = ("wget " +link +" -P " +location)
+        #subprocess.call((cmd), shell=True)
+torrent_download(torrent_dl)
 
-for i in range(x):
-    print(Fore.GREEN +str(i) +(" ") +Style.RESET_ALL +((d['entries'][i]['title'] +"      " +Fore.GREEN + (d['entries'][i]['link']) +Style.RESET_ALL)))
-print("\n")
-t = str(input("Enter the the number of the torrent(s) you want to download (example: 1,2,3): "))
 
-print(t)
-trn = t.split(',')
-trnlth = len(trn)
+print("Downloads complete!")
 
-for i in range(trnlth):
-    print((d['entries'][int(trn[i])]['link']))
-for i in range(trnlth):
-    rent = (d['entries'][int(trn[i])]['link'])
-    cmd = ("wget " +rent +" -P " +location)
-    subprocess.call((cmd), shell=True)
-print("Download(s) complete!")
-exit=input("Press Any Key To Exit...")
+exit=input("Press any key to exit...")
