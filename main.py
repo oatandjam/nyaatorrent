@@ -33,11 +33,11 @@ def torrent_download(*args):
     i=0
     for item in args:
         print("Downloading " +str(args))
-        print(entries[int(item[i])]['link'])
+        link = (entries[int(item[i])]['link'])
         print(i)
         i = i + 1
-        #cmd = ("wget " +link +" -P " +location)
-        #subprocess.call((cmd), shell=True)
+        cmd = ("wget " +link +" -P " +location)
+        subprocess.call((cmd), shell=True)
 torrent_download(torrent_dl)
 
 
