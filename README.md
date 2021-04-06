@@ -2,26 +2,21 @@
 
 A terminal torrent file downloader for nyaa.si (not a torrent client).
 
-Dependencies
+requirements:
 -----
-* python3
+* python 3.6.1 
 * wget
-
+* rich
+* feedparser 6.0.0
 
 How to use
 -----
-Clone the repo, run main.py.
+Clone the repo and run main.py.
 
-The downloads are stored in the following directory: ~/Downloads/nyaatorrents/
+Downloads are stored in the following directory: /downloads/nyaatorrents/
 
-The download path can be changed by changing the location variable in main.py under: #DOWNLOAD PATH
+The download path can be changed by changing the location variable in main.py under '#DOWNLOAD PATH'.
 
 Screenshot
 -----
 ![](https://github.com/oatandjam/nyaatorrent/blob/master/nyaatorrentpv.png)
-
-TO DO
------
-* Add search functionality.
-* Add the ability to open downloaded torrent files in your default torrent client.
-* Revamp UI!
