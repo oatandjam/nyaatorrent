@@ -21,4 +21,4 @@ The download path can be changed by changing the location variable in main.py un
 
 Screenshot
 -----
-![](https://github.com/oatandjam/nyaatorrent/blob/master/media/img/nyaatorrentpv.png)
+![](https://github.com/oatandjam/nyaatorrent/blob/master/media/img/WindowsTerminal_P0r0fOznjs.png)
