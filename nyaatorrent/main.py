@@ -1,12 +1,22 @@
+import traceback
+import subprocess
 try:
     from rich.console import Console
     from rich.prompt import Prompt
     from rich.table import Table
     from rich import box
     import feedparser as fp
-    import subprocess
 except ImportError:
-    print("Please make sure that all requiered dependancies are installed!")
+    traceback.print_exc()
+    input("Press enter to install missing packages")
+    import pip
+    pip.main(['install','--user','rich','feedparser'])
+    from rich.console import Console
+    from rich.prompt import Prompt
+    from rich.table import Table
+    from rich import box
+    import feedparser as fp
+    
     quit() 
 # DOWNLOAD PATH
 path = ("/downloads/nyaatorrents/")
