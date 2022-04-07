@@ -1,3 +1,4 @@
+import os
 import traceback
 import subprocess
 try:
@@ -16,10 +17,15 @@ except ImportError:
     from rich.table import Table
     from rich import box
     import feedparser as fp
-    
     quit() 
-# DOWNLOAD PATH
-path = ("/downloads/nyaatorrents/")
+
+# Initialise download path 
+path=(os.path.expanduser('~')+"/nyaatorrents/downloads/")
+if not os.path.exists(path):
+    os.makedirs(path)   
+
+dirname= os.path.dirname(path)
+
 try:
     nyaa_rss = fp.parse('https://nyaa.si/?page=rss')
 except:
@@ -45,7 +51,7 @@ torrent_dl = tuple(torrent_dl.split(","))
 print(torrent_dl)
 def torrent_download():
         link = (entries[int(item)]['link'])
-        cmd = ("wget " +link +" -P " +path)
+        cmd = ("wget " +link +" -P " +dirname)
         subprocess.call((cmd), shell = True)
 for item in torrent_dl:
     torrent_download()
