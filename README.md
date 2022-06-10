@@ -6,10 +6,10 @@ A terminal torrent file downloader for nyaa.si (not a torrent client).
 
 requirements:
 -----
-* python 3.6.1 
+* python >=3.6.1
 * wget
 * rich
-* feedparser 6.0.0
+* feedparser >=6.0.0
 
 How to use
 -----
