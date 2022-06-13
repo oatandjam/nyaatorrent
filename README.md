@@ -1,4 +1,6 @@
-![](https://github.com/oatandjam/nyaatorrent/blob/master/logo.png)
+![](https://github.com/oatandjam/nyaatorrent/blob/master/media/img/logo.png)
+
+[![Python application](https://github.com/oatandjam/nyaatorrent/actions/workflows/python-app.yml/badge.svg)](https://github.com/oatandjam/nyaatorrent/actions/workflows/python-app.yml)
 
 A terminal torrent file downloader for nyaa.si (not a torrent client).
 
@@ -19,4 +21,4 @@ The download path can be changed by changing the location variable in main.py un
 
 Screenshot
 -----
-![](https://github.com/oatandjam/nyaatorrent/blob/master/nyaatorrentpv.png)
+![](https://github.com/oatandjam/nyaatorrent/blob/master/media/img/WindowsTerminal_P0r0fOznjs.png)
